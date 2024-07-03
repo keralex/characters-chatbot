@@ -16,13 +16,13 @@ Welcome to the Anime Character Chat App! This project is built using **Next.js**
 1. Clone the repository:
 
    \`\`\`bash
-   git clone https://github.com/your-username/anime-character-chat-app.git
+   git clone https://github.com/keralex/characters-chatbot.git
    \`\`\`
 
 2. Navigate to the project directory:
 
    \`\`\`bash
-   cd anime-character-chat-app
+   cd characters-chatbot
    \`\`\`
 
 3. Install dependencies:
@@ -51,10 +51,3 @@ Welcome to the Anime Character Chat App! This project is built using **Next.js**
 - Select an anime character from the list.
 - Start chatting and enjoy the interactive experience!
 
-## Contributing
-
-We welcome contributions! Please read our [contributing guidelines](CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
