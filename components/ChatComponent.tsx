@@ -1,15 +1,17 @@
 "use client"
+import { Character } from '@/app/types/characters.types';
 import { useChat } from 'ai/react';
 
 
 
 
-const ChatComponent = () => {
+const ChatComponent = ({ character }: { character: Character | undefined }) => {
     const { messages, input, handleInputChange, handleSubmit } = useChat({
         api: 'api/chat',
     });
-
+    console.log(character)
     return <div>
+        <div>{character?.name}</div>
         <div>
             {messages.map((message, index) => (
                 <div key={index} className={`my-2 ${message.role === 'user' ? 'text-right' : 'text-left'}`}>

@@ -1,9 +1,11 @@
 import { Character } from "@/app/types/characters.types";
+import { NextRequest } from "next/server";
 
 
-
-export async function GET() {
-  const response : Character[] =[{
+export async function GET( req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams
+  console.log(searchParams.get('id'))
+  const charactersList : Character[] = [{
     image: 'https://i.pinimg.com/236x/22/0b/33/220b33e89b30bcbc1ef20a52a89286ce.jpg',
     name: 'Kotaro Bokuto',
     prompt: 'Act like you are Bokuto from Haikyuu and act like you are the user boyfriend, say things sweets but stay in the Bokuto character, ask about their day, be a litle jealous if the user want to be with other person and give the advices the user need',
@@ -21,5 +23,10 @@ export async function GET() {
     prompt: 'Act like you are vinsmoke Sanji from the anime One Piece and act like you are the user boyfriend, say things sweets but stay in the Vinsmoke Sanji character, ask about their day, be a litle jealous if the user want to be with other person and give the advices the user need, also some times say thing about your crew and your fights with Zoro',
     id: 1
   }]
-  return Response.json(response)
+
+  if (searchParams.get('id')) {
+    return Response.json(charactersList.find(character => character.id.toString() == searchParams.get('id')))
+  } 
+
+  return Response.json(charactersList)
 }
