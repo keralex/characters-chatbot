@@ -8,4 +8,16 @@ module.exports = {
             },
         ];
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "i.pinimg.com",
+            },
+            {
+                protocol: "https",
+                hostname: "staticg.sportskeeda.com",
+            },
+        ],
+    },
 };
