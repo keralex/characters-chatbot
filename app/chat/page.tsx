@@ -11,6 +11,7 @@ export default function ChatPage() {
 
     const id = searchParams.get('id')
     const [selectedCharacter, setSelectedCharacter] = useState<Character | undefined>()
+    console.log(id)
     const getCharacter = async () => {
         const res = await fetch(`http://localhost:3000/api/characters?id=${id}`);
         const character = await res.json();

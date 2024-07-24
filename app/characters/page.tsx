@@ -10,6 +10,7 @@ export default async function CharactersPage() {
     }
 
     const charactersList = await getCharacters()
+    console.log(charactersList)
     return <Layout>
         <h2 className='mb-8 text-center text-xl text-blue-900'>Choose your perfect boyfriend</h2>
 

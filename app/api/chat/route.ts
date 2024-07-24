@@ -1,5 +1,6 @@
 import { type CoreMessage, streamText } from 'ai';
 import { createOpenAI } from '@ai-sdk/openai';
+import { Character } from '@/app/types/characters.types';
 
 const headers = {
   'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
@@ -16,11 +17,11 @@ const openai = createOpenAI({
 export const maxDuration = 60;
 
 export async function POST(req: Request) {
-  const { messages }: { messages: CoreMessage[] } = await req.json();
-  
+  const { messages, character }: { messages: CoreMessage[] , character: Character } = await req.json();
+  console.log(character)
   const result = await streamText({
     model: openai('gpt-3.5-turbo'),
-    system: 'Act like you are Bokuto from Haikyuu and act like you are the user boyfriend , say things sweets but stay in the Bokuto character ',
+    system: character.prompt,
     messages,
   });
 

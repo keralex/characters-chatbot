@@ -8,8 +8,8 @@ import { useChat } from 'ai/react';
 const ChatComponent = ({ character }: { character: Character | undefined }) => {
     const { messages, input, handleInputChange, handleSubmit } = useChat({
         api: 'api/chat',
+        body: { character }
     });
-    console.log(character)
     return <div>
         <div>{character?.name}</div>
         <div>
